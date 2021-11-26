@@ -2,23 +2,6 @@
 title: "09 Data Storage"
 ---
 
-Chapter 5 will be folded in...
-
-<style>
-
-.note {
-    background-color: #d7fbd7;
-    border: 2px solid #578757;
-    padding: 10px;
-    margin: 20px auto;
-}
-
-</style>
-
-# Chapter 7: Data Storage
-
-[ToC]
-
 ## Introduction
 
 Data Storage is a term made up of three components. In this section we will walk you through determining the amount of storage, where to store your active research data, and finally, storing your data for the long term, generally known as data preservation. Backing up your data, while also a storage issue, is handled separately. 
