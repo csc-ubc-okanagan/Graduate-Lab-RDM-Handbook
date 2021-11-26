@@ -2,19 +2,6 @@
 title: "04 Directory Structures"
 ---
 
-<style>
-
-.note {
-    background-color: #d7fbd7;
-    border: 2px solid #578757;
-    padding: 10px;
-    margin: 20px auto;
-}
-
-</style>
-
-[ToC]
-
 ## Introduction
 
 While the way we currently organize folders and files on our computer may make sense to us, the structure may become promblamtic if and when we need to share these folders and files with other people. As well, a folder name that is meaningful for us may make no sense to another person.
