@@ -2,17 +2,6 @@
 title: "05 Version Control"
 ---
 
-<style>
-
-.note {
-    background-color: #d7fbd7;
-    border: 2px solid #578757;
-    padding: 10px;
-    margin: 20px auto;
-}
-
-</style>
-
 Version control can be tackled in a couple of different ways.
 
 Version control - although not using this wording - was arguably first born in the context of records management, reliant originally on prescribed annotations, but more recently on naming conventions and multiple copies – or versions – of documents being created and managed.
