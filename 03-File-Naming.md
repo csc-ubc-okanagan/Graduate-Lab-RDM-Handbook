@@ -2,19 +2,6 @@
 title: "03 File Naming"
 ---
 
-<style>
-
-.note {
-    background-color: #d7fbd7;
-    border: 2px solid #578757;
-    padding: 10px;
-    margin: 20px auto;
-}
-
-</style>
-
-[ToC]
-
 ## Introduction
 
 File naming isn't exactly fun, but it is crucial for organizing, describing, and managing research.
