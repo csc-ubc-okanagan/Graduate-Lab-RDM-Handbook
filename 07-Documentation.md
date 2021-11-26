@@ -2,19 +2,6 @@
 title: "07 Documentation"
 ---
 
-<style>
-
-.note {
-    background-color: #d7fbd7;
-    border: 2px solid #578757;
-    padding: 10px;
-    margin: 20px auto;
-}
-
-</style>
-
-[Toc]
-
 ## Introduction
 
 When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files:
