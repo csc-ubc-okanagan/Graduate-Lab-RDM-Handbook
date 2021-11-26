@@ -1,9 +1,6 @@
-
 ---
 title: "10 Offboarding"
 ---
-
-[Toc]
 
 ## Introduction
 
