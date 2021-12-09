@@ -11,7 +11,7 @@ title: "01 Outline"
 * Roles and Responibilities
 * The Wrap Up
 
-Research Data Management (RDM) at its core is about being organizes, which means being intentional and coordinated - when working with others - about where we put things, how we name things, how we describe things, and - with everything likely stored on a computer - how we do this all in a way that is both human and machine accessible. The spin off of this is reasearch that is transparent, reproducible, and, if desired, shareable.
+Research Data Management (RDM) at its core is about being organized, which means being intentional and coordinated - when working with others - about where we put things, how we name things, how we describe things, and - with everything likely stored on a computer - how we do this all in a way that is both human and machine accessible. The spin off of this is reasearch that is transparent, reproducible, and, if desired, shareable.
 
 It can seem like a lot. But working with a couple of principles and with a little planning, it's not hard to tackle.
 
