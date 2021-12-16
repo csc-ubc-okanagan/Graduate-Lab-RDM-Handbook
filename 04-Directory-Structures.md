@@ -64,10 +64,8 @@ Depending on your project team, it's possible that not everybody should have the
 1. Will you:
     a. Use a common directory structure across all projects in your lab?
     b. Use a set of common directory structures across all projects in you lab?
-    
-What will the directory structures look like? Will there be a template that can be copied and pasted? Will the template include placeholder documentation files (readme, data dictionary etc)?
-What will file naming conventions for diretories be?
-
-2. Who (what role) will be responsible of informing new lab members about the directory structure to employ?
-3. Who should questions about directory structure be directed to?
-4. Who is responsible for ensuring that directory structures across projects are kept up to a minimum standard? How often will this be reviewed?
+2. What will the directory structures look like? Will there be a template that can be copied and pasted? Will the template include placeholder documentation files (readme, data dictionary etc)?
+3. What will file naming conventions for diretories be?
+4. Who (what role) will be responsible of informing new lab members about the directory structure to employ?
+5. Who should questions about directory structure be directed to?
+6. Who is responsible for ensuring that directory structures across projects are kept up to a minimum standard? How often will this be reviewed?
