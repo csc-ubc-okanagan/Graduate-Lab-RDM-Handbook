@@ -23,11 +23,11 @@ An offboarding guide should contain:
 * All offboarding documents should be reviewed by either the lab manager, the PI, or their designate at least 5 days in advance of the final working day of the person leaving.
 * Be written as plain text.
 * Contain a checklist of actions specific to your research, including but not limited to
-1.  Locations of all files worked on that are pertinent to the project and any passwords created by this person to secure those files.
-2.  Are files accessible by other members of the team
-3.  Specific feedback about the research project that might be useful to your team or lab in the future.
-4.  Recommmendations from the person leaving about any processes or procedures that were good, that did not work, or that were outdated.
-5.  Future contact information, if needed.
+    1.  Locations of all files worked on that are pertinent to the project and any passwords created by this person to secure those files.
+    2.  Are files accessible by other members of the team
+    3.  Specific feedback about the research project that might be useful to your team or lab in the future.
+    4.  Recommmendations from the person leaving about any processes or procedures that were good, that did not work, or that were outdated.
+    5.  Future contact information, if needed.
 
 ## Roles and Responsibilities {-}
 
