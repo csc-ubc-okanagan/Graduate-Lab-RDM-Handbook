@@ -130,7 +130,7 @@ VisDunbar_SMS-DB-Prev_Data-Clean_V3.docx
 
 <div class = "note">
     If you anticipate there ever being more than 10 versions of any document, ensure that you use a double digit system <code>V00, V01, V02</code> etc to maintain a propoer sort order.
-</div>div>
+</div>
 
 ## Automatic {-}
 
