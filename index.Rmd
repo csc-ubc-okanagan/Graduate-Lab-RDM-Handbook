@@ -1,6 +1,5 @@
 ---
 title: "RDM Handbook"
-author: "Marjorie Mitchell, Nick Rochlin, and Mathew Vis-Dunbar"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
