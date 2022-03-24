@@ -1,7 +1,3 @@
----
-title: "05 Version Control"
----
-
 # Version Control {-}
 
 Version control can be tackled in a couple of different ways.

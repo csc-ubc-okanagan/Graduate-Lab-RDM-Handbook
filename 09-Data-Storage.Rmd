@@ -1,7 +1,3 @@
----
-title: "09 Data Storage"
----
-
 # Data Storage {-}
 
 Data Storage is a term made up of three components. In this section we will walk you through determining the amount of storage, where to store your active research data, and finally, storing your data for the long term, generally known as data preservation. Backing up your data, while also a storage issue, is handled separately. 

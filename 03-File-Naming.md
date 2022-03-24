@@ -1,7 +1,3 @@
----
-title: "03 File Naming"
----
-
 # File Naming {-}
 
 File naming isn't exactly fun, but it is crucial for organizing, describing, and managing research.

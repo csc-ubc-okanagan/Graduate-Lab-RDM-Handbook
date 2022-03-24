@@ -1,7 +1,3 @@
----
-title: "10 Offboarding"
----
-
 # Offboarding {-}
 
 Offboarding is a systematic process to ensure that when people leave your team you have all the information you require to continue your research in an orderly and smooth fashion.

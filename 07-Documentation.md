@@ -1,7 +1,3 @@
----
-title: "07 Documentation"
----
-
 # Documentation {-}
 
 When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files:

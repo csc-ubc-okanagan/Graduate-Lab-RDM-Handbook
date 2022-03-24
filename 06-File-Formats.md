@@ -1,7 +1,3 @@
----
-title: "06 File Formats"
----
-
 # File Formats {-}
 
 For every research project, it's important to consider which file formats you'll use to save and store your data and files.  In some instances, the file formats you use will be dictated by software, instruments, or other factors in your research project or field, but in other cases, you may have the option to choose between several different formats. The type of data that you're working with will also play a factor in determining the file formats you use, but considering your workflows and project goals should play a large role in selecting formats. 

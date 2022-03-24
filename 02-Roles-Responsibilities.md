@@ -1,7 +1,3 @@
----
-title: "02 Roles & Responsibilities"
----
-
 # Roles & Responsibilities {-}
 
 A lab manual is a way to communicate the protocols, practices, and procedures (among other things) of a research lab or group, with the goal of avoiding confusion and misunderstandings.  When creating a lab or team manual, defining roles and responsibilities, and ensuring that everybody is very clear about their role in managing a project’s data, is of primary importance.

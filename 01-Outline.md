@@ -1,7 +1,3 @@
----
-title: "01 Outline"
----
-
 # Outline {-}
 
 4 potential bigger buckets

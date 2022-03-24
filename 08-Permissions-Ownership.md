@@ -1,7 +1,3 @@
----
-title: "08 Permissions & Ownership"
----
-
 # Permissions & Ownership {-}
 
 Managing access and permissions at the project, directory, and file level is not an easy task. However, not everyone involved in a given project needs or should have access to every aspect of that project.
