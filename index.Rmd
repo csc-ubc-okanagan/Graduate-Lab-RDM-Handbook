@@ -1,8 +1,10 @@
 ---
-title: "RDM Handbook"
+title: "RDM Handbook DRAFT"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 ---
 
 # Welcome! {-}
+
+This resource is currently in **DRAFT** and not intended for public use. It is being made available for demonstration purposes only.

@@ -1,0 +1,1297 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={RDM Handbook DRAFT},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{RDM Handbook DRAFT}
+\author{}
+\date{\vspace{-2.5em}2022-06-09}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{welcome}{%
+\chapter*{Welcome!}\label{welcome}}
+\addcontentsline{toc}{chapter}{Welcome!}
+
+This resource is currently in \textbf{DRAFT} and not intended for public use. It is being made available for demonstration purposes only.
+
+\hypertarget{outline}{%
+\chapter*{Outline}\label{outline}}
+\addcontentsline{toc}{chapter}{Outline}
+
+4 potential bigger buckets
+
+\begin{itemize}
+\tightlist
+\item
+  Naming and organization
+\item
+  Data Storage
+\item
+  Roles and Responibilities
+\item
+  The Wrap Up
+\end{itemize}
+
+Research Data Management (RDM) at its core is about being organized, which means being intentional and coordinated - when working with others - about where we put things, how we name things, how we describe things, and - with everything likely stored on a computer - how we do this all in a way that is both human and machine accessible. The spin off of this is reasearch that is transparent, reproducible, and, if desired, shareable.
+
+It can seem like a lot. But working with a couple of principles and with a little planning, it's not hard to tackle.
+
+\hypertarget{roles-responsibilities}{%
+\subsection*{Roles \& Responsibilities}\label{roles-responsibilities}}
+\addcontentsline{toc}{subsection}{Roles \& Responsibilities}
+
+It's important to know - when working in a team - who is resonsible for what. This chapter walks you through some of the questions a research team should be asking themselves at the outset about who will be doing what and when. These are then addressed in more detail in each subsequent section.
+
+\hypertarget{offboarding}{%
+\subsection*{Offboarding}\label{offboarding}}
+\addcontentsline{toc}{subsection}{Offboarding}
+
+Tightly wed to roles and responsibilities, when someone leaves a research project, things need to be passed along and access to components of a research project need to be updated. This chapter covers considerations and approaches to handling offboarding.
+
+\hypertarget{file-naming}{%
+\subsection*{File Naming}\label{file-naming}}
+\addcontentsline{toc}{subsection}{File Naming}
+
+There are few things more frustrating then when preparing for a submission and opening a folder to find somethign like the following list of files\ldots{}
+
+\begin{verbatim}
+Anlaysis to be reviewed.docx
+Analysis to be reviewed MVD.docx
+Analysis to be reviewed final.docx
+Analysis to be reviewed FINAL.docx
+Analysis FINAL.docx
+Analysis FINAL - Updated.docx
+Analysis - Last update - FINAL.docx
+\end{verbatim}
+
+This chapter covers common conventions to avoid this headache - allowing you to look at a file and determine it's author, it's place in the chain of edits, and if needed, to use code to extract files of a specific designation from across and within complex nested folder structures.
+
+\hypertarget{directory-structures}{%
+\subsection*{Directory Structures}\label{directory-structures}}
+\addcontentsline{toc}{subsection}{Directory Structures}
+
+When projects get complex, file naming alone is not sufficient. When we're working across multiple projects, having fundamentally different organizational structures can be frustrating. This chapter covers common convetions in setting up directory structures that help streamline how new projects are started, who has access to what kind of content, and with the use of a template sets a common structure across projects.
+
+\hypertarget{permissions-ownership}{%
+\subsection*{Permissions \& Ownership}\label{permissions-ownership}}
+\addcontentsline{toc}{subsection}{Permissions \& Ownership}
+
+Not everyone needs access - nor shoudl everyone require access - to everything related to a research project. Data in particular may be sensitive. This chapter covers approaches to establishing ownership over files and directories and setting permissions - the abaility to access or edit - on these for different partners in the research project.
+
+\hypertarget{file-formats}{%
+\subsection*{File Formats}\label{file-formats}}
+\addcontentsline{toc}{subsection}{File Formats}
+
+One person works in \texttt{.csv} another in \texttt{.xls} another in \texttt{.xlsx} and yet another in \texttt{.ods}. This limits portability of the information, risks introducing file errors as they are passed between computing environments, and causes headaches when you're not working in your preferred format in your preferred application. This chapter covers approaches to standardizing file formats used across a research project.
+
+\hypertarget{documentation}{%
+\subsection*{Documentation}\label{documentation}}
+\addcontentsline{toc}{subsection}{Documentation}
+
+How roles are assigned for a specific project, what naming conventions and directory structures should be used, how specific aspects of a research project should be undertaken should all be articulated. This serves as a reminder, it keeps people accountable, and it simplifies onboarding new research partners to an existing project. This chapter covers conventions for migrating tacit knowledge to documentation throughout a research project to ensure the project is comprehensible.
+
+\hypertarget{version-control}{%
+\subsection*{Version Control}\label{version-control}}
+\addcontentsline{toc}{subsection}{Version Control}
+
+Sometimes we need to track changes in certain documents over time. Version control let's us know what the currrent working copy is and how a file has changed over time. Version control can be handled by software, but also through naming conventions. This chapter covers common approaches to tackling version control with naming conventions.
+
+\hypertarget{data-storage}{%
+\subsection*{Data Storage}\label{data-storage}}
+\addcontentsline{toc}{subsection}{Data Storage}
+
+Research data often has restrictions or obligations for where it's stored and how long it's stored for. Research data is also incredibly value, so we'd be loath to keep only one copy of it. This chapter covers outlining storage solutions from the outset that address potential restrictions and obligations. It also covers approaches to keeping multiple copies of research data to protect against accidental loss.
+
+\hypertarget{wrapping-up-a-project}{%
+\subsection*{Wrapping up a project}\label{wrapping-up-a-project}}
+\addcontentsline{toc}{subsection}{Wrapping up a project}
+
+\hypertarget{retention-deposit}{%
+\subsection*{Retention \& Deposit}\label{retention-deposit}}
+\addcontentsline{toc}{subsection}{Retention \& Deposit}
+
+Retention schedules
+
+\hypertarget{roles-responsibilities-1}{%
+\chapter*{Roles \& Responsibilities}\label{roles-responsibilities-1}}
+\addcontentsline{toc}{chapter}{Roles \& Responsibilities}
+
+A lab manual is a way to communicate the protocols, practices, and procedures (among other things) of a research lab or group, with the goal of avoiding confusion and misunderstandings. When creating a lab or team manual, defining roles and responsibilities, and ensuring that everybody is very clear about their role in managing a project's data, is of primary importance.
+
+The roles and responsibilities of your research will come into play in all other modules in this guide, and while we all want things to go perfectly, life happens and things can slip off track. If things do start to become disorganized, this shouldn't be a source of shame or embarrassment, and you can use this guide as a reference to help get things back in order.
+
+\hypertarget{general-rules}{%
+\section*{General Rules}\label{general-rules}}
+\addcontentsline{toc}{section}{General Rules}
+
+While not technically ``rules'', below are some suggestions and things to consider when developing your lab manual.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Designating Roles}: If you have research or lab manager in your group, designating responsibilities can largely fall to this person. However, if your group does not have this as a formal role, it is important that the team discusses and designates roles and responsibilities amongst themselves, and that everybody has a clear idea of what others are doing, and what is expected of them. These roles should be documented somewhere. See the chapter on documentation.
+\item
+  \textbf{Access Permissions}: It's very possible that everybody within a research group won't need access to all the group's data. It's also possible that due to data sensitivities and restrictions, there will be team members who explicitly should not have access to some data. In addition to designating who will provision access permissions, it's also important to clearly outline and manage each team member's data access. This should be incorporated in both the onboarding and offboarding of team members.
+\item
+  \textbf{Onboarding}: When a person first joins a research group, things can be overwhelming and not all information will be retained. While it's important to ensure there is a person or person who is responsible for onboarding, and that roles and responsibilities are explained to new members, it is equally important for there to be a documentation for reference (and that the documentation be updated as necessary).
+\item
+  \textbf{Updating}: Just as much as it's valuable to develop naming conventions, folder hierarchies, versioning practices, and documentation, it's equally (and potentially more) important to ensure that the documentation of any new additions or practices be updated. Determining who will update the documentation will be specific to every team, and again, ensuring that expectations are clearly communicated is key.
+\item
+  \textbf{Setting a Schedule}: Whether it's daily, weekly, bi-weekly, etc., having regularly scheduled tasks that can apply to specific group members or to everybody, will help keep things consistent and updated. This can apply to things like backups and reviewing any documentation that may need to be updated due to changes or additions.
+\item
+  \textbf{Regular Check-ins}: Everybody is busy, but it's useful to have regular check-ins to make sure everything is staying on track, and to address any issues or questions people may have.
+\end{itemize}
+
+\hypertarget{questions}{%
+\section*{Questions}\label{questions}}
+\addcontentsline{toc}{section}{Questions}
+
+\begin{itemize}
+\tightlist
+\item
+  What roles currently exist in your lab team?
+\item
+  How are roles and responsabilties communicated?
+\end{itemize}
+
+\hypertarget{file-naming-1}{%
+\chapter*{File Naming}\label{file-naming-1}}
+\addcontentsline{toc}{chapter}{File Naming}
+
+File naming isn't exactly fun, but it is crucial for organizing, describing, and managing research.
+
+First, some general rules and a quick reference, then we break these down and explain the processes behind them.
+
+\hypertarget{general-rules-1}{%
+\section*{General Rules}\label{general-rules-1}}
+\addcontentsline{toc}{section}{General Rules}
+
+\begin{itemize}
+\tightlist
+\item
+  File names should only contain letters in the English alphabet, numbers from \texttt{1-9}, dashes \texttt{-}, and underscores \texttt{\_}.
+\item
+  Do not use spaces or special characters, including \texttt{\#\ \%\ \&\ \textless{}\ \textgreater{}\ :\ "\ /\ \ \textbar{}\ ?\ *\ \{\ \}\ \$\ !\ \textquotesingle{}\ @\ +\ =}
+\item
+  File names should be broken down into conceptual components that are separated by underscores \texttt{\_}.
+\item
+  If more than one word is needed in each conceptual component, these are separated by dashes \texttt{-}.
+\item
+  All file names should start with the last name of the creator of the file, followed by the project name, and then what the file contains. Additional blocks may be added as needed, these may include dates, versions, if a file is restricted etc.
+\item
+  All of these components should be meaningful (read on for what it means for a file name to be meaningful!)
+\item
+  All file names should end with a file type extension.
+\end{itemize}
+
+Depending on what the file pertains to, how exactly these guidelines are implemented will differ slightly.
+
+\hypertarget{quick-reference}{%
+\section*{Quick Reference}\label{quick-reference}}
+\addcontentsline{toc}{section}{Quick Reference}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Format \& Example
+\end{minipage} \\
+\midrule
+\endhead
+Maunscript & \textbf{F} LastName\_Project\_File-contents\_Version.file-type\textbf{E} VisDunbar\_SMS-DB-Prev\_Manuscript\_V0.docx \\
+Feedback & \textbf{F} LastName\_Project\_File-contents\_Version\_Editor-Initial.file-type\textbf{E} VisDunbar\_SMS-DB-Prev\_Manuscript\_V0\_NR.docx \\
+Figure, Plots, Images & \textbf{F} LastName\_Project\_Figure-title\_Version.file-type\textbf{E} VisDunbar\_SMS-DB-Prev\_Fig1\_V0.docx \\
+Scripts & \textbf{F} LastName\_Project\_Script\_Version.file-type\textbf{E} VisDunbar\_SMS-DB-Prev\_Data-Clean\_V0.docx \\
+Data & \textbf{F} LastName\_Date\_Project\_Data-file-description.file-type\textbf{E} VisDunbar\_20210901\_SMS-DB-Prev\_P-Data.docx \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{whats-in-a-name}{%
+\section*{What's in a name}\label{whats-in-a-name}}
+\addcontentsline{toc}{section}{What's in a name}
+
+File names need to achieve two primary goals, they need to make sense to a human reading them and they need to be constructed in a way that allows a computer to parse or process them. That is, file names should be \textbf{human interpretable} and \textbf{machine readable}.
+
+\hypertarget{human-interpretable}{%
+\subsection*{Human interpretable}\label{human-interpretable}}
+\addcontentsline{toc}{subsection}{Human interpretable}
+
+To be human interpretable, a file name needs to be meaningful. To do this, it needs to convey some basic information to a person reading it. We do this by integrating metadata into the file name. The metadata elements we include are:
+
+\begin{itemize}
+\tightlist
+\item
+  Who created the file
+\item
+  The date on which it was created
+\item
+  The project to which it is connected
+\item
+  The nature of the contents of the file
+\item
+  If it's been modified
+\item
+  The type or format of the file
+\end{itemize}
+
+That is, we should be able to look at a file name and tell, who created it, when it was created, what it is related to, what is inside of it, if it has been updated, and what application we should expect to be able to open it with.
+
+By using underscores \_ to break up the metadata in a file name and by always using the same patterns, we quickly become atune to these patterns and picking out specific files from a long list becomes increasingly easy.
+
+All said, that's a fair bit of information to hold in a file name. However, using standard truncation can be useful to manage overly long file names.
+
+\hypertarget{machine-readable}{%
+\subsection*{Machine readable}\label{machine-readable}}
+\addcontentsline{toc}{subsection}{Machine readable}
+
+A file name that is machine readable or machine interpretable means creating file names in such a way that they can be sorted by an application along specified delimiters. This means building our names according to set patterns, which can then be parsed, and if necessary, described. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.
+
+By using underscores \_ to break up the metadata in a file name and by always using the same patterns, we can computationaly isolate files based on each of these attributes irrespective of the directory structure in which we store them, and, for example, find all files from a particular creator, project, or created on a specific date.
+
+\hypertarget{special-characters}{%
+\subsection*{Special characters}\label{special-characters}}
+\addcontentsline{toc}{subsection}{Special characters}
+
+Different computing environments (applications, operating systems etc) handle character encoding in idiosyncratic ways. If you've ever opened a document and seen what look like odd characters or numbers in boxes in the middle of words, this is becuase the original encoding does not match the encoding of the system you're using.
+
+This same thing can happen in file names and even produce errors when trying to read files. For this reason, we want to work with the safest subset of characters available to us; those base characters recognized by all systems. This means not using special characters.
+
+Special characters are all characters except:
+
+\begin{itemize}
+\tightlist
+\item
+  Any character that is a part of the English alphabet
+\item
+  Numbers from \texttt{0\ -\ 9}
+\item
+  Dashes \texttt{-}
+\item
+  Underscores \texttt{\_}
+\end{itemize}
+
+A space is a special character, which means that your file names should not have spaces.
+
+When operating in a multi-lingual or non-English environment, this can prove problematic, but it is an unfortunate legacy of the development of computer standards that has yet to be fully resolved.
+
+\hypertarget{file-naming-conventions}{%
+\section*{File Naming Conventions}\label{file-naming-conventions}}
+\addcontentsline{toc}{section}{File Naming Conventions}
+
+\hypertarget{order}{%
+\subsection*{Order}\label{order}}
+\addcontentsline{toc}{subsection}{Order}
+
+Convention often has file naming proceed in the following order, with each element separated by an underscore \texttt{\_}, and words within an element joined with a dash \texttt{-}. The file type is generally added with a period \texttt{.} and is usually automatically generated when an application creates a file. More elements can be added as needed.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Element-1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\_Element-2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\_Element-3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\_Element-4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\_Element-5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+.Element-6
+\end{minipage} \\
+\midrule
+\endhead
+Last-Name & \_Date & \_Project & \_File-Contents & \_Version & .File-type \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{dates}{%
+\subsection*{Dates}\label{dates}}
+\addcontentsline{toc}{subsection}{Dates}
+
+Dates should be written in the following format \texttt{yyyymmdd}. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from \texttt{1\ -\ 9} should be led by a \texttt{0}. For example, January 23, 2020, should be written \textbf{20200123}. When written this way, your computer will always sort your files from the earliest date to the latest date when sorted in ascending order.
+
+\hypertarget{versions}{%
+\subsection*{Versions}\label{versions}}
+\addcontentsline{toc}{subsection}{Versions}
+
+Manual version tracking through file nameing convetions is achieved by adding \texttt{\_Vn} where \texttt{n} is the version number. With each major change, we increase \texttt{n} by \texttt{1}. So version 1 would read \texttt{\_V1}, and when updated, it would read \texttt{\_V2}.
+
+Versions are very important for things like manuscripts and interpretations of data, such as figures and other visualizations, which we will continue to change and modify or update throughout a project. Data, however, while it has a collection date, should not be `updated', and should not then be versioned. If new data sets are derived from the original data, they should be named and dated accordingly.
+
+Version control through file naming is described in more detail in the manual version control section on version control.
+
+\hypertarget{roles-and-responsibilities}{%
+\section*{Roles and Responsibilities}\label{roles-and-responsibilities}}
+\addcontentsline{toc}{section}{Roles and Responsibilities}
+
+It's possible that there may be multiple projects occuring within your lab, and it's worth noting that these different projects don't need to adhere to the same naming conventions (in fact, depending on the projects, it may be preferable to have different conventions). However, what is important is that all files within a project are named consistently, and that there is documentation for file naming that all project members are introduced to when onboarded, and can easily be found for reference. Designating a person to create, introduce, and update the file naming documentation will be extremely valuable in keeping your project organized.
+
+It's also worth noting that things can get chaotic from time to time, and consistent naming may begin to slip. This happens to the best of us, but designating a person to periodically check on files and update any inconsistencies is a great safeguard to keep things from slipping too far.
+
+\hypertarget{questions-1}{%
+\section*{Questions}\label{questions-1}}
+\addcontentsline{toc}{section}{Questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What files do you anticipate creating across the projects in your lab?
+\item
+  What baseline file naming conventions do you expect team members to use when creating files?
+\item
+  Who (what role) will be responsible of informing new lab members about file naming conventions to employ?
+\item
+  Who should questions about file naming be directed to?
+\item
+  Who is responsible for ensuring that file naming across projects is kept up to a minimum standard? How often will this be reviewed?
+\end{enumerate}
+
+\hypertarget{directory-structures-1}{%
+\chapter*{Directory Structures}\label{directory-structures-1}}
+\addcontentsline{toc}{chapter}{Directory Structures}
+
+While the way we currently organize folders and files on our computer may make sense to us, the structure may become promblamtic if and when we need to share these folders and files with other people. As well, a folder name that is meaningful for us may make no sense to another person.
+
+Like with file naming, conventions for directory structures and directry names will help organize the files on your computer in a way that is meaningful to both you and others. It will also allow for programmatically parsing the files if needed.
+
+\hypertarget{general-rules-2}{%
+\section*{General Rules}\label{general-rules-2}}
+\addcontentsline{toc}{section}{General Rules}
+
+\begin{itemize}
+\tightlist
+\item
+  Directory names should only contain letters in the English alphabet, numbers from \texttt{1-9}, dashes \texttt{-}, and underscores \texttt{\_}.
+\item
+  Do not use spaces \texttt{} or special characters, including \texttt{\#\ \%\ \&\ \textless{}\ \textgreater{}\ :\ "\ /\ \ \textbar{}\ ?\ *\ \{\ \}\ \$\ !\ \textquotesingle{}\ @\ +\ =}
+\item
+  Directory names should be broken down into components that are separated by underscores \texttt{\_}.
+\item
+  If more than one word is needed in each component, these are separated by dashes \texttt{-}.
+\end{itemize}
+
+\hypertarget{quick-reference-1}{%
+\section*{Quick Reference}\label{quick-reference-1}}
+\addcontentsline{toc}{section}{Quick Reference}
+
+A naming conventions for common directories should be used:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Data/} for all data directories
+\item
+  \texttt{Manuscript/} for all authored papers
+\item
+  \texttt{Conferences/} for all files realted to conferences
+\item
+  \texttt{Scripts/} for all scripts
+\end{itemize}
+
+\hypertarget{directory-hierarchies}{%
+\section*{Directory Hierarchies}\label{directory-hierarchies}}
+\addcontentsline{toc}{section}{Directory Hierarchies}
+
+The highest-ranking folder is generally called the root directory. This folder will contain all of the subfolders and files related to a particular project, including its data, analysis, manusrcipts etc. It will also contain what is called a \texttt{readme} file.
+
+The structure should look something like the following:
+
+\begin{verbatim}
+Project-Folder/Data/File-1
+Project-Folder/Data/File-2
+Project-Folder/Analysis/File-1
+Project-Folder/Maunscript/File-1
+Project-Folder/Manuscript/File-2
+\end{verbatim}
+
+Here, our root folder is called \texttt{Project-Folder} and it contains three subdirectories, one for data, \texttt{Data}, one for analyses, \texttt{Analysis}, and one for a manuscript \texttt{Manuscript}. Each subdirectory then contains one or many files.
+
+\hypertarget{directory-naming}{%
+\section*{Directory Naming}\label{directory-naming}}
+\addcontentsline{toc}{section}{Directory Naming}
+
+Key file naming conventions, such as avoiding special characters, are equally as important for directories as they are for naming files. A special character is anything other than letters in the English alphabet, numbers from \texttt{1-9}, dashes \texttt{-}, and underscores \texttt{\_}.
+
+When we name the root folder we want to clearly communicate what the project is. And similarly, within this root folder, we want clearly labeled subfolders for each relevant aspect of the project. Common discrete subdirectories include ones for figures, data, manuscript etc.
+
+\hypertarget{example}{%
+\section*{Example}\label{example}}
+\addcontentsline{toc}{section}{Example}
+
+LAB SPECIFIC
+
+\hypertarget{roles-and-responsibilities-1}{%
+\section*{Roles and Responsibilities}\label{roles-and-responsibilities-1}}
+\addcontentsline{toc}{section}{Roles and Responsibilities}
+
+Much like file naming, the key to keeping your directory structure organized is by being consistent and having regularly updated documentation.
+
+Depending on your project team, it's possible that not everybody should have the ability to add folders at every level of the hierarchy. When new directories are created, the person who creates the folder should be responsible for documenting the new addition in the appropriate place. There should also be a person who is designated to regularly check on the documentation and folders to ensure that everything is accurate, and to update any inconsistencies.
+
+\hypertarget{questions-2}{%
+\section*{Questions}\label{questions-2}}
+\addcontentsline{toc}{section}{Questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Will you:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Use a common directory structure across all projects in your lab?
+  \item
+    Use a set of common directory structures across all projects in you lab?
+  \end{enumerate}
+\item
+  What will the directory structures look like? Will there be a template that can be copied and pasted? Will the template include placeholder documentation files (readme, data dictionary etc)?
+\item
+  What will file naming conventions for diretories be?
+\item
+  Who (what role) will be responsible of informing new lab members about the directory structure to employ?
+\item
+  Who should questions about directory structure be directed to?
+\item
+  Who is responsible for ensuring that directory structures across projects are kept up to a minimum standard? How often will this be reviewed?
+\end{enumerate}
+
+\hypertarget{version-control-1}{%
+\chapter*{Version Control}\label{version-control-1}}
+\addcontentsline{toc}{chapter}{Version Control}
+
+Version control can be tackled in a couple of different ways.
+
+Version control - although not using this wording - was arguably first born in the context of records management, reliant originally on prescribed annotations, but more recently on naming conventions and multiple copies -- or versions -- of documents being created and managed.
+
+But software developers working in distributed environments really pioneered the way forward in how we track changes in a document and across a project, especially in a digital environment, using version control systems.
+
+In research, version control comes into play in a variety of ways, sometimes in the context of software, sometimes data, as well as in our methods, protocols, and manuscripts.
+
+Version control helps to keep you sane as you track changes through a project in a logical, stepwise manner. Version control also increases the transparency of your work, providing a window into the evolution of a document, concept, or project.
+
+\hypertarget{undo-vs-version-control}{%
+\section*{Undo vs Version Control}\label{undo-vs-version-control}}
+\addcontentsline{toc}{section}{Undo vs Version Control}
+
+We should differentiate between version control for sanity and transparency and version histories for recovery or tracked changes.
+
+Tracking every change made is more about recovery than versioning. Versioning instead is very much about capturing moments of significant change or phases of implementation.
+
+When we think recovery, it's more like having an undo function: the whoops moment, I made a mistake --- I didn't mean to delete that paragraph or I didn't mean to put that file in the trash --- let me undo that.
+
+When we think of version control, we should be thinking of a timestamp to capture significant decisions made in the transition or evolution of a project, ideally accompanied by a description of what these changes were.
+
+This is a continuum, and the difference between recovery and version control is more nuanced than this, but this dichotomy helps to highlight the role of version control in tracing change over time versus recovering from a mistake. In fact, wedding these two concepts together in the implementation of a version control system can provide for the best of both worlds.
+
+\hypertarget{manual}{%
+\section*{Manual}\label{manual}}
+\addcontentsline{toc}{section}{Manual}
+
+Manual version control is handled by file naming convetions, and was touced on in the section on file naming.
+
+Depending on the file type, or data / information held within a file, the file naming conventions used may differ. For files where a date is extremely relevant, such as with data, the date may form the primary means of versioning. This may then be supplemented with a version number to indicate modifications to the date versioned file.
+
+For example, say I've collected data over several days, each collected in it's own file. I might have something like the following using our file naming conventions:
+
+\begin{verbatim}
+VisDunbar_20210901_SMS-DB-Prev_P-Data.csv
+VisDunbar_20210905_SMS-DB-Prev_P-Data.csv
+VisDunbar_20210912_SMS-DB-Prev_P-Data.csv
+\end{verbatim}
+
+Now, I should keep an unmodified version of each, so I might call those V0 to supplement the date:
+
+\begin{verbatim}
+VisDunbar_20210901_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210905_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210912_SMS-DB-Prev_P-Data_V0.csv
+\end{verbatim}
+
+You may wish to set the file permissions on your V0 data to read only to ensure that they cannot be edited accidentally.
+
+I might then merge and go through and standardize the data, ensuring any blank values are set to \texttt{NA} and all character data matches on upper and lower cases. To do this, I would make a copy of each V0, indicate that these are the working copy somehow, maybe appeninding \texttt{V1}, and then merge them and make these changes to a new file that captures this information in a meaningful way, updating the date component to reflect the full span and resetting the version to \texttt{V0}.
+
+\begin{verbatim}
+VisDunbar_20210901_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210905_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210912_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210901_SMS-DB-Prev_P-Data_V1.csv
+VisDunbar_20210905_SMS-DB-Prev_P-Data_V1.csv
+VisDunbar_20210912_SMS-DB-Prev_P-Data_V1.csv
+VisDunbar_20210901-20210912_SMS-DB-Prev_P-Data_V0.csv
+\end{verbatim}
+
+If there are meaningul ways in which the amalgamated data should be parsed for analysis, I may choose to update the version number to capture these modifications to the data file. In this scenario \texttt{V\ \textgreater{}\ 0} indicates a working copy and \texttt{V\ =\ 0} indicates a copy of record.
+
+\begin{verbatim}
+VisDunbar_20210901_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210905_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210912_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210901_SMS-DB-Prev_P-Data_V1.csv
+VisDunbar_20210905_SMS-DB-Prev_P-Data_V1.csv
+VisDunbar_20210912_SMS-DB-Prev_P-Data_V1.csv
+VisDunbar_20210901-20210912_SMS-DB-Prev_P-Data_V0.csv
+VisDunbar_20210901-20210912_SMS-DB-Prev_P-Data_V1.csv
+VisDunbar_20210901-20210912_SMS-DB-Prev_P-Data_V2.csv
+\end{verbatim}
+
+For files where date is of less relevance, such as a manuscript, a version number may be the primary means of versioning changes. This may then be supplemented with a date and / or an initial to indicate modifications to this version. So, say we have the following file
+
+\begin{verbatim}
+VisDunbar_SMS-DB-Prev_Manuscript_V0.docx
+\end{verbatim}
+
+I only want to update the version between major edits, so if I distribute the file for review by my co-authors, I would expect those to be returned to me with dates and initials so that I can keep track of things.
+
+\begin{verbatim}
+VisDunbar_SMS-DB-Prev_Manuscript_V0.docx
+VisDunbar_SMS-DB-Prev_Manuscript_V0_20210902_MM.docx
+VisDunbar_SMS-DB-Prev_Manuscript_V0_20210910_NR.docx
+\end{verbatim}
+
+After recieving these suggestions and edits, I would copy and rename \texttt{V0} to \texttt{V1} and carry on implementing the edits into \texttt{V1}.
+
+\begin{verbatim}
+VisDunbar_SMS-DB-Prev_Manuscript_V0.docx
+VisDunbar_SMS-DB-Prev_Manuscript_V0_20210902_MM.docx
+VisDunbar_SMS-DB-Prev_Manuscript_V0_20210910_NR.docx
+VisDunbar_SMS-DB-Prev_Manuscript_V1.docx
+\end{verbatim}
+
+For some files it may be necessary to indicate a working copy. For instance, a script to process data may have a current working version, but you want to test something out. This test should not be done directly to the working version, but it also hasn't passed quality control and ready to be released as the next version. One way to implement this is by appending additional information onto the version. So say I have the following script
+
+\begin{verbatim}
+VisDunbar_SMS-DB-Prev_Data-Clean_V2.docx
+\end{verbatim}
+
+And we have an idea to update it, to test this out I would copy \texttt{V2} and then indicate that this copy is a working copy by appending a \texttt{1}
+
+\begin{verbatim}
+VisDunbar_SMS-DB-Prev_Data-Clean_V2.docx
+VisDunbar_SMS-DB-Prev_Data-Clean_V2-1.docx
+\end{verbatim}
+
+or a \texttt{W} for \texttt{working}
+
+\begin{verbatim}
+VisDunbar_SMS-DB-Prev_Data-Clean_V2.docx
+VisDunbar_SMS-DB-Prev_Data-Clean_V2-W.docx
+\end{verbatim}
+
+Once the working copy is shown to work and has been ok'd by the team, I'll rename it to the next version
+
+\begin{verbatim}
+VisDunbar_SMS-DB-Prev_Data-Clean_V2.docx
+VisDunbar_SMS-DB-Prev_Data-Clean_V3.docx
+\end{verbatim}
+
+\begin{verbatim}
+If you anticipate there ever being more than 10 versions of any document, ensure that you use a double digit system <code>V00, V01, V02</code> etc to maintain a propoer sort order.
+\end{verbatim}
+
+\hypertarget{automatic}{%
+\section*{Automatic}\label{automatic}}
+\addcontentsline{toc}{section}{Automatic}
+
+Automated version control systems save us from having to update file names. Instead the metadata that manual naming systems use to record version information is stored elsewhere as part of the system managing the versions.
+
+For some work, or some projects, you may be asked to work with platforms like OSF or GitHub. The former is desigbned to provide you with version control for binary files - files like Excel, Word, PDF etc - while the latter is designed for plain text files.
+
+Using these systems is beyond the scope of this manual, suffice to say, that manual naming conventions as they relate to versioning can be ignored.
+
+\hypertarget{implementation}{%
+\section*{Implementation}\label{implementation}}
+\addcontentsline{toc}{section}{Implementation}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Version protocol
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule
+\endhead
+V0 & Copy of record. Do not edit. \\
+V1\ldots V\emph{n} & Staged version. Represents a significant change or update. \\
+V\emph{n}\_YYYYMMDD\_FL & Working document of verson \emph{n}, includes dates and First name Last Name initials of editor \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{roles-and-responsibilities-2}{%
+\section*{Roles and Responsibilities}\label{roles-and-responsibilities-2}}
+\addcontentsline{toc}{section}{Roles and Responsibilities}
+
+Whatever system, or systems, of version control you decide to use, ensuring that there is someone in the group to document and update the relevant procedures. Also, designating a team member to periodically check for and correct any inconsistencies is very helpful in keeping project data and files organized.
+
+\hypertarget{questions-3}{%
+\section*{Questions}\label{questions-3}}
+\addcontentsline{toc}{section}{Questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What system of version control will you use for:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Manuscripts
+  \item
+    Code
+  \item
+    Data
+  \item
+    Documentation
+  \item
+    Figures and images
+  \end{enumerate}
+\item
+  For manual naming conventions, what convention will you use for
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Manuscripts
+  \item
+    Code
+  \item
+    Data
+  \item
+    Documentation
+  \item
+    Figures and images
+  \end{enumerate}
+\item
+  How will you ensure that raw data files are not edited / worked on?
+\end{enumerate}
+
+\hypertarget{file-formats-1}{%
+\chapter*{File Formats}\label{file-formats-1}}
+\addcontentsline{toc}{chapter}{File Formats}
+
+For every research project, it's important to consider which file formats you'll use to save and store your data and files. In some instances, the file formats you use will be dictated by software, instruments, or other factors in your research project or field, but in other cases, you may have the option to choose between several different formats. The type of data that you're working with will also play a factor in determining the file formats you use, but considering your workflows and project goals should play a large role in selecting formats.
+
+\hypertarget{file-format-best-practices}{%
+\section*{File Format Best Practices}\label{file-format-best-practices}}
+\addcontentsline{toc}{section}{File Format Best Practices}
+
+\begin{itemize}
+\tightlist
+\item
+  If possible, collect data in open and non-proprietary formats
+\item
+  If not possible to collect open / non-proprietary formats, try to pick a format that can be easily converted to an open format
+\item
+  Consider software and formats that are widely used within your discipline
+\item
+  Be aware of software, hardware, and licensing requirements for viewing and working with data
+\item
+  Be aware of using elements such as colour or highlighting as a form of metadata, as they may be lost if converted to a different format
+\end{itemize}
+
+\hypertarget{recommended-formats-for-sharing-resuse-and-preservation}{%
+\subsection{Recommended formats for sharing, resuse, and preservation}\label{recommended-formats-for-sharing-resuse-and-preservation}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2542}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3898}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3559}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Data Type}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Recommended Formats}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Accepted Formats}
+\end{minipage} \\
+\midrule
+\endhead
+\textbf{Tabular data with extensive metadata} (variable labels, code labels, defined missing values & .por (SPSS portable format) & .sav, .dta, .mdb,.accdb \\
+\textbf{Tabular data with minimal metadata} (column headings, variable names) & .csv, .tab & .txt, .xls, .xlsx, .mdb, .accdb, .dbf, .ods \\
+\textbf{Textual data} & .rtf, .txt, .xml & .html, .doc/.docx \\
+\textbf{Image data} & .tiff (TIFF 6.0) & .jpeg, .jpg, .jp2, .gif, .tif, .tiff, .raw, .psd, .bmp, .png, .pdf \\
+\textbf{Audio data} & .flac & .mp3, .aif, .wav \\
+\textbf{Video data} & .mp4, .ogv, .ogg, .mj2 & .avchd \\
+\textbf{Documentation and scripts} & .rtf, .pdf, .xhtml, .htm, .odt & .txt, .doc/.docx, .xls, .xlsx, .xml \\
+\textbf{Geospatial data} (vector and raster data) & .shp, .shx, .dbf, .prj, .sbx, .sbn, .tif, .tfw, .dwg, .gml & .mdb, .mif, .kml, .dxf, .svg \\
+\textbf{Chemistry data} (spectroscopy) & .jdx (JCAMP) & \\
+\bottomrule
+\end{longtable}
+
+Source: \href{https://guides.library.oregonstate.edu/research-data-services/data-management-types-formats}{Oregon State University}
+
+\hypertarget{raw-data}{%
+\subsection{Raw Data}\label{raw-data}}
+
+Raw data referse to data that has been gathered or collected in its initial state, and has not yet been processed, cleaned, organized, or analyzed in any way. Depending on the type of data you are working with and how its generated, you may or may not have the option to choose your raw file formats (for example, if your data is dependent on instruments or software).
+
+General recommendations for raw data file formats:
+* Save a copy of your raw data in its original format, and do not alter or clean in any way. In case things go sideways, it's always good to have to have a fallback.
+* If possible, save a copy of your raw data in one of the recommended formats (preferable) or accepted formats above.
+
+\hypertarget{processed-data}{%
+\subsection{Processed Data}\label{processed-data}}
+
+Processed data refers to data that has been cleaned, organized, and or manipulated in ways that allow the data to be analyzed. When actively processing data, select file formats that allow you and your team to to easily share, open, and read files. If you are creating any code or scripts to clean or analyze your data, follow the same guidelines in regards to the formats in which they are saved. For both your data and code, if you are using proprietary or non-open formats, consider how you may convert these files to the recommended formats above once processing is complete.
+
+\hypertarget{data-for-deposit}{%
+\subsection{Data for Deposit}\label{data-for-deposit}}
+
+Deposited data refers to data that is place into a digital repository for long-term archiving. For this type of data, the recommended formats from above are most condusive to the long-term access of your data and files.
+
+\hypertarget{manuscrips}{%
+\subsection*{Manuscrips}\label{manuscrips}}
+\addcontentsline{toc}{subsection}{Manuscrips}
+
+When preparing and working on manuscripts, one of the most common file formats is .doc/.docx, which generally requires Microsoft Word in order to create, edit, or view, but other applications like Open Office and LibreOffice can read these files as well. While these are proprietary formats, they are widely accepted formats and are thus in the `accepted formats' category.
+
+Depending on the nature of your manuscript and how you intend to develop, edit, share, and disseminate, the formats in the ``Textual data'' section are all viable options.
+
+\hypertarget{documentation-files}{%
+\subsection*{Documentation files}\label{documentation-files}}
+\addcontentsline{toc}{subsection}{Documentation files}
+
+Documentation files, such as READMEs and data dictionaries, should be written in plain text so that they can be easily opened by any computer at any point in time. .txt is a popular plain text format, and widely used for documentation files and other instructional documents.
+
+In addition to .txt files, Markdown, which is saved as .md files, is an authoring language that makes it easy to create HTML documents without having to type all the extra characters of HTML. Markdown can be read by any application that will open a .txt file, and is increasingly being used for technical documentation. With that said, there may be systems that will not render an .md file with the desired formatting, so depending on your workflow and how you plan to disseminate and potentially archive your work, this may not be the ideal file format.
+
+\hypertarget{questions-4}{%
+\section*{Questions}\label{questions-4}}
+\addcontentsline{toc}{section}{Questions}
+
+\begin{itemize}
+\tightlist
+\item
+  What file formats will be used for what content types?
+\item
+  Are any of your files bound to specific software or instruments? If so, do all your collaborators have access to these?
+\item
+  Have you looked into how to convert any proprietary file formats you may have into non-proprietary formats?
+\end{itemize}
+
+\hypertarget{documentation-1}{%
+\chapter*{Documentation}\label{documentation-1}}
+\addcontentsline{toc}{chapter}{Documentation}
+
+When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files:
+
+\begin{itemize}
+\tightlist
+\item
+  A \texttt{\_README} file which resides in our \textbf{root folder} and elaborates on the contents of our folder structure.
+\item
+  A \texttt{\_README} file that resides in our \textbf{data directory} and discusses some of the particulars of the how, where, and who did the actual data collection.
+\item
+  A \texttt{\_DATA-DICTIONARY} file that also resides in our \textbf{data directory} and elaborates on how our data is stored and organized.
+\end{itemize}
+
+These files - containing a brief description of the major folder contents, naming conventions, and data structure - are critical for transparency and reproducibility because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.
+
+\hypertarget{general-rules-3}{%
+\section*{General Rules}\label{general-rules-3}}
+\addcontentsline{toc}{section}{General Rules}
+
+A readme file and data dictionary should:
+
+\begin{itemize}
+\tightlist
+\item
+  Exist in at least two locations, the root directory and the data directory.
+\item
+  Be prepended with an underscore \texttt{\_}. This will push these files to the top of the directory for easy access.
+\item
+  Be written as plain text.
+\item
+  \texttt{\_README} and \texttt{\_DATA-DICTIONARY} files should be in all caps, so they really stand out; this should be the first thing you look at when looking at any directory or folder, as this is your guide to its contents.
+\end{itemize}
+
+Occasionally, certain systems and applications (such as GitHub), will not properly recognize a readme file that is preceded by an underscore \_. In these situations, the underscore should be ommitted.
+
+\hypertarget{readmes}{%
+\section*{Readmes}\label{readmes}}
+\addcontentsline{toc}{section}{Readmes}
+
+\hypertarget{file-formats-2}{%
+\subsection*{File Formats}\label{file-formats-2}}
+\addcontentsline{toc}{subsection}{File Formats}
+
+Readme files and data dictionaries should be written in plain text; this will ensure that the files describing your project can be opened on any computer at virutally any point in time. A word processor document from 15 years ago might be a challenge to open today. A plain text file from the 1980s won't have the same issue. You will often see readme files called \texttt{\_README.txt} or \texttt{\_DATA-DICTIONARY.txt}
+
+\hypertarget{markdown}{%
+\subsubsection*{Markdown}\label{markdown}}
+\addcontentsline{toc}{subsubsection}{Markdown}
+
+While plain text works well, using a markup language in plain text can be beneficial. Markup is a way of formatting plain text files, allowing us to provide additional meaning to our content. For example, in plain text, if we want to emphasize content, we don't really have a way of doing this. In a popular markup language, Markdown, we can use italics and bolding if needed. We can also create lists and tables. So you kind of get the best of both worlds.
+
+Learn the basic syntax of Markdown \href{https://www.markdownguide.org/basic-syntax/}{here}.
+
+\hypertarget{root-folder}{%
+\subsection*{Root Folder}\label{root-folder}}
+\addcontentsline{toc}{subsection}{Root Folder}
+
+To create a root folder \texttt{readme} file, use any markdown or text editor (e.g.~Typora, notepad etc.), open a new file and save it to the root folder for your project, ensuring the file type is \texttt{.md}.
+
+Name your readme file \texttt{\_README.md}.
+
+Next, we want to add some content to our \texttt{\_README.md}. The purpose of this document, at a bare minimum, is to describe the directory structure of our project. To adequately describe our directory structure we should include:
+
+\begin{itemize}
+\tightlist
+\item
+  A brief description of the project or purpose of the root folder
+\item
+  Date when the root folder was created and who created it
+\item
+  Date when the readme file was last updated and who updated it
+\item
+  A brief description of the contents of each major folder within the root folder
+\item
+  A brief description of file naming conventions used within the directory
+\end{itemize}
+
+To see an example root directory readme file click here.
+
+\hypertarget{data-directory-readme}{%
+\subsection*{\texorpdfstring{Data directory \texttt{readme}}{Data directory readme}}\label{data-directory-readme}}
+\addcontentsline{toc}{subsection}{Data directory \texttt{readme}}
+
+Next, we want to create another \texttt{readme} file, but this file will be placed within the subfolder that contains our project's data. To do this, open any markdown or text editor (e.g.~Typora, notepad etc.), open a new file and save it to the data subfolder for your project, ensuring the file type is \texttt{.md}. Name your readme file \texttt{\_README.md}.
+
+The purpose of this readme file is to provide a description of data collection methods. We will include, at a minimum:
+
+\begin{itemize}
+\tightlist
+\item
+  Date when the data directory was created and who created it
+\item
+  Date when the readme file was updated and who updated it
+\item
+  A brief description of each data that was collected, the methods used for collection, and the date range for when each dataset was collected
+\item
+  A description of who was involved in data collection
+\item
+  A brief description of where the data was collected
+\end{itemize}
+
+To see an example data directory readme file click here.
+
+\hypertarget{data-dictionaries}{%
+\subsection*{Data Dictionaries}\label{data-dictionaries}}
+\addcontentsline{toc}{subsection}{Data Dictionaries}
+
+Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (e.g.~Atom, Typora, notepad etc.), open a new file and save it to the data subfolder for your project. This time we will save the file as \texttt{\_DATA-DICTIONARY.md}.
+
+A data dictionary helps others understand the meaning of each element in your datasets within the broader context of the project. Typically you will have an individual readme file for each dataset. This file should include:
+
+\begin{itemize}
+\tightlist
+\item
+  Date when the data dictionary was created and who created it
+\item
+  Date when the data dictionary file was updated and who updated it
+\item
+  A description of the raw data file
+\item
+  A description of each variable for all datasets including data type, units, number of levels if categorical, and a description of variable levels where relevant
+\item
+  When describing variables you need to provide the full names and definitions of each variable because often variables are abbreviated in datasets
+\end{itemize}
+
+To see an example data dictionary click here.
+
+\hypertarget{roles-and-responsibilities-3}{%
+\section*{Roles and Responsibilities}\label{roles-and-responsibilities-3}}
+\addcontentsline{toc}{section}{Roles and Responsibilities}
+
+It's important to remember that having a documentation system that your team can easily update throughout a project is more benefical than one that begins with great detail, but is difficult to maintain. As the project grows and new files and folders are created, clearly identifying what information team members need to document, and where that information needs to be put, will help keep things on track. It is also worth considering having a person who periodically will check the documentation to ensure that it's accurate, and can update any inconsistencies.
+
+\hypertarget{questions-5}{%
+\section*{Questions}\label{questions-5}}
+\addcontentsline{toc}{section}{Questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What baseline documentation are team members expected to create? (readme, data dictionary, code books, code documentation\ldots)
+\item
+  Where should these documentation file reside?
+\item
+  What would a template for each of these look like? Or what baseline information would you expect each piece of documentation to include?
+\item
+  What format should this documentation be stored in?
+\item
+  Who is responsible within a given project for ensuring adequate documentation is created and maintained?
+\item
+  Who is responsible for ensuring that documentation across projects is kept up to a minimum standard? How often will this be reviewed?
+\item
+  Where will roles and responsibilities for lab processes be tracked?
+\item
+  Where will roles and responsibilities for specific projects be tracked / articulated?
+\end{enumerate}
+
+\hypertarget{permissions-ownership-1}{%
+\chapter*{Permissions \& Ownership}\label{permissions-ownership-1}}
+\addcontentsline{toc}{chapter}{Permissions \& Ownership}
+
+Managing access and permissions at the project, directory, and file level is not an easy task. However, not everyone involved in a given project needs or should have access to every aspect of that project.
+
+When preparing for a research project, and mapping out the directory structure and storage locations that will be used, we should think about the following roles and which should have access to what parts of a project:
+
+\begin{itemize}
+\tightlist
+\item
+  Primary investigator
+\item
+  Lead researcher
+\item
+  Lab manager
+\item
+  Research collaborators
+\item
+  Graduate assistants
+\item
+  Undergraduate assistants
+\item
+  Funders
+\item
+  Editors and Reviewers
+\item
+  The public
+\end{itemize}
+
+Depending, some of these actors may not be relevant, and some may need further breakdown when thinking about roles in the research project and access and permission needs.
+
+Most systems allow three levels of access:
+
+\begin{itemize}
+\tightlist
+\item
+  Administrator or owner
+\item
+  Read and write
+\item
+  Read only
+\end{itemize}
+
+It's worth considering two other potential levels of access:
+
+\begin{itemize}
+\tightlist
+\item
+  Knowing something exists
+\item
+  No knowledge
+\end{itemize}
+
+Generally, \textbf{administrators} have full control over what ever they preside on, wheterh this be at the project, directory, or file level. At the project level, they can generally invite and remove collaborators and make public or delete files. \textbf{Read and write} will allow a user or person to open (read) and edit (write) existing files. Depending on the system, read and write may allow users to delete or make public files and directories. It may also allow them to create new files. Generally read and write does not allow invitation or deletion of collaborators. However, it's always wise to ask these questions of whatever storage solution you're using to house your research. \textbf{Read only} generally only allows for the opening of a file, without the ability to edit, delete, or invite additional collaborators.
+
+Even when someone is unable to read the contents of a file, we may wish to make them aware of its existence. Publishing, or making publicily available, a copy of your directory structure, is one way of doing this - one may be able to see the names of individual files and perhaps a \texttt{readme} file that describes the contents of the file, but does not actually reveal these contents. This may be useful in a data sharing scenario, where you may be willing or in a position to share your data upon request; a request can only come if someone knows there is something there to request.
+
+When all data and metadata are stored on private media or are unpublished, non-collaborators will have zero knowledge of any of your research data or other files.
+
+When prepaing for a project, access permissions for directories should be articulated based on collaborator roles. If needed, and if using a system that supports file level permissions, these too should be considered and articulated. A registry should then be maintained, listing all collaborators, their roles, and what they have access to. When leaving a project, collaborators should have their permissions and access updated.
+
+\hypertarget{roles-and-responsibilities-4}{%
+\section*{Roles and Responsibilities}\label{roles-and-responsibilities-4}}
+\addcontentsline{toc}{section}{Roles and Responsibilities}
+
+\hypertarget{questions-6}{%
+\section*{Questions}\label{questions-6}}
+\addcontentsline{toc}{section}{Questions}
+
+\hypertarget{data-storage-1}{%
+\chapter*{Data Storage}\label{data-storage-1}}
+\addcontentsline{toc}{chapter}{Data Storage}
+
+Data Storage is a term made up of three components. In this section we will walk you through determining the amount of storage, where to store your active research data, and finally, storing your data for the long term, generally known as data preservation. Backing up your data, while also a storage issue, is handled separately.
+
+Data storage is important but becomes urgent when you don't have enough space to store all your data files. This is especially true if you are part way through a research project and are unable to save and/or capture data because you have run out of data storage space. If you are uncertain how to estimate the amount of storage you require, people in Research Computing and Advanced Research Computing are available to help you quickly and easily determine this.
+
+\hypertarget{general-rules-4}{%
+\section*{General Rules}\label{general-rules-4}}
+\addcontentsline{toc}{section}{General Rules}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Know what the subject of your data is as this will determine where you can store it and whether or not additional security measures are recommended or required
+\item
+  Determine approximations for how much data your project will generate
+\item
+  Outline whether your collaborators (if any) are from within UBC or outside of UBC
+\item
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Determine what level of security your files and data require. Working with human data \emph{may} require different storage than data that is not of human origin or relating to human participants or subjects.
+\item
+  Allocate storage for original (raw) data, cleaned or organized data, processed and analyzed data, documentation that informs users about your data, draft papers, charts, visualizations, photos, ans supplementary items that go within your papers. You will likely also need some, generally small, amount of space for the admimistrative documents of your project such as grant applications and the like.
+\item
+  Allocate sufficient storage in different locations for back-ups.
+\item
+  Arrange for sufficient or additional storage well before it is actually required. Sometimes you have instant access to needed additional storage, and in other cases, it takes time to gain access.
+\item
+  Decide who needs access to which files. Principal Investigators (PIs) and lab managers often have access to all the files at all times while students beginning work in the lab may only have access to the files into which they are entering data. Graduate students and post docs may have access to more files. Record who has access to which files. Record all the locations (specific drive, or other exact location) and who has access to which locations.
+\item
+  Apply standardized file names to all your files (see Chapter 2) and directory structures (see Chapter 3) to all storage locations
+\end{itemize}
+
+Depending on what types of information the file contains, how exactly these guidelines are implemented will differ slightly.
+
+\hypertarget{quick-reference-2}{%
+\section*{Quick Reference}\label{quick-reference-2}}
+\addcontentsline{toc}{section}{Quick Reference}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Stoage Location
+\end{minipage} \\
+\midrule
+\endhead
+Data about non-humans & \textbf{Teams} Good for collaborating on documents.\textbf{OneDrive} Cloud Storage good for many kinds of data and file formats \\
+Non-sensitive Human data & \textbf{Teams} Good for collaborating on documents.\textbf{OneDrive} Cloud Storage good for many kinds of data and file formats \\
+Big Data & \textbf{UBC Administered} Sockeye or Chinook.\textbf{Contact} Consult an ARC consultant about your requirements. www.arc.ubc.ca \textbf{Compute Canada} Consult an ARC consultant about your requirements. www.arc.ubc.ca \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{storage-locations-not-recommended-by-ubc}{%
+\subsection*{Storage locations NOT recommended by UBC}\label{storage-locations-not-recommended-by-ubc}}
+\addcontentsline{toc}{subsection}{Storage locations NOT recommended by UBC}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Drop Box} Cloud storage servers are located in the US and do not provide meet the Freedom of Information and Protection of Privacy Act (FIPPA) requirements for UBC researchers.
+\item
+  \textbf{Google Drive} Cloud storage servers are located in the US and do not provide meet the Freedom of Information and Protection of Privacy Act (FIPPA) requirements for UBC researchers.
+\end{itemize}
+
+\textbf{How \emph{many} copies of files and the locations of these copies matters.}
+
+A \textbf{best practice} for files is to have
+\textbf{\emph{3}} copies in
+\textbf{\emph{2}} formats (i.e.~laptop harddrive and removeable harddrive)
+\textbf{\emph{1}} stored off-site
+
+\hypertarget{file-naming-conventions-1}{%
+\section*{File Naming Conventions}\label{file-naming-conventions-1}}
+\addcontentsline{toc}{section}{File Naming Conventions}
+
+Utilize a standardized file naming convention as outlined in the File Naming section.
+
+\hypertarget{roles-and-responsibilities-5}{%
+\section*{Roles and Responsibilities}\label{roles-and-responsibilities-5}}
+\addcontentsline{toc}{section}{Roles and Responsibilities}
+
+You may have multiple projects occuring within your lab concurrently and it's worth noting that these different projects may have different storage requirements. Additionally, file naming conventions will become specifically more important so files for separate projects do not become mixed.
+
+\hypertarget{questions-7}{%
+\section*{Questions}\label{questions-7}}
+\addcontentsline{toc}{section}{Questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Where will active project storage occur? (laptop, lab computer, OneDrive, Teams etc)
+\item
+  Where will active projects be backed up to? How often will back-ups be run?
+\item
+  At project completion, how long will the following be kept (UBC minimum requirements, other\ldots)
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Data
+  \item
+    Code
+  \item
+    Manuscripts and posters
+  \end{enumerate}
+\item
+  At project completion, where will files be stored?
+\item
+  At time of publication / presentation, where will files be shared? (Dataverse, OSF, OneDrive etc.)
+\item
+  Will the lab use Dataverse for data deposit?
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    What will the structure of Dataverse look like?
+  \end{enumerate}
+\item
+  Will you use disk level encryption? If so, whe, and what service?
+\item
+  Will you use file level encryption? If so, when, and what service?
+\end{enumerate}
+
+\hypertarget{offboarding-1}{%
+\chapter*{Offboarding}\label{offboarding-1}}
+\addcontentsline{toc}{chapter}{Offboarding}
+
+Offboarding is a systematic process to ensure that when people leave your team you have all the information you require to continue your research in an orderly and smooth fashion.
+
+The longer the amount of time your research project operates, the more likely that you will have people, such as students at various levels, join and leave the research team. Having a standard process for offboarding people will prevent or reduce:
+
+\begin{itemize}
+\tightlist
+\item
+  People leaving and taking needed passwords and/or files with them.
+\item
+  Time lost locating files required for continued work.
+\item
+  Possible file security breaches in the future.
+\end{itemize}
+
+This is especially helpful when working with a group or sharing data with others. Concretely outlining the steps everyone must take before they complete their term is good practice.
+
+\hypertarget{general-rules-5}{%
+\section*{General Rules}\label{general-rules-5}}
+\addcontentsline{toc}{section}{General Rules}
+
+An offboarding guide should contain:
+
+\begin{itemize}
+\tightlist
+\item
+  Any already existing administrative requirements for offboarding such as returning keys, and expiring accounts to specific computer drives or storage locations. Avoid duplicating procedures that already exist and that are sufficient for your purposes.
+\item
+  Ensure the offboarding process be completed by every person prior to ending their term on your research project or in your research lab.
+\item
+  All offboarding documents should be reviewed by either the lab manager, the PI, or their designate at least 5 days in advance of the final working day of the person leaving.
+\item
+  Be written as plain text.
+\item
+  Contain a checklist of actions specific to your research, including but not limited to
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Locations of all files worked on that are pertinent to the project and any passwords created by this person to secure those files.
+  \item
+    Are files accessible by other members of the team
+  \item
+    Specific feedback about the research project that might be useful to your team or lab in the future.
+  \item
+    Recommmendations from the person leaving about any processes or procedures that were good, that did not work, or that were outdated.
+  \item
+    Future contact information, if needed.
+  \end{enumerate}
+\end{itemize}
+
+\hypertarget{roles-and-responsibilities-6}{%
+\section*{Roles and Responsibilities}\label{roles-and-responsibilities-6}}
+\addcontentsline{toc}{section}{Roles and Responsibilities}
+
+It's important to remember that having a documentation system that your team can easily update throughout a project is more benefical than one that begins with great detail, but is difficult to maintain. As the project grows and new files and folders are created, clearly identifying what information team members need to document, and where that information needs to be put, will help keep things on track. It is also worth considering having a person who periodically will check the documentation to ensure that it's accurate, and can update any inconsistencies. The offboarding documents can be a valuable source of information to assist in keeping the documentation system up to date.
+
+\end{document}

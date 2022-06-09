@@ -4,26 +4,25 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>What's in a name | RDM Handbook</title>
-  <meta name="description" content="What's in a name | RDM Handbook" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <title>What's in a name | RDM Handbook DRAFT</title>
+  <meta name="description" content="What's in a name | RDM Handbook DRAFT" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="What's in a name | RDM Handbook" />
+  <meta property="og:title" content="What's in a name | RDM Handbook DRAFT" />
   <meta property="og:type" content="book" />
-  
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="What's in a name | RDM Handbook" />
+  <meta name="twitter:title" content="What's in a name | RDM Handbook DRAFT" />
   
   
   
 
 
 
-<meta name="date" content="2022-03-24" />
+<meta name="date" content="2022-06-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="quick-reference.html"/>
 <link rel="next" href="file-naming-conventions.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -70,7 +69,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">RDM Handbook</a></li>
+<li><a href="./">RDM Handbook DRAFT</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome!</a></li>
@@ -151,7 +150,7 @@
 <ul>
 <li class="chapter" data-level="" data-path="readmes.html"><a href="readmes.html#file-formats-2"><i class="fa fa-check"></i>File Formats</a></li>
 <li class="chapter" data-level="" data-path="readmes.html"><a href="readmes.html#root-folder"><i class="fa fa-check"></i>Root Folder</a></li>
-<li><a href="readmes.html#data-directory-readme">Data directory <code>readme</code></a></li>
+<li class="chapter" data-level="" data-path="readmes.html"><a href="readmes.html#data-directory-readme"><i class="fa fa-check"></i>Data directory <code>readme</code></a></li>
 <li class="chapter" data-level="" data-path="readmes.html"><a href="readmes.html#data-dictionaries"><i class="fa fa-check"></i>Data Dictionaries</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="roles-and-responsibilities-3.html"><a href="roles-and-responsibilities-3.html"><i class="fa fa-check"></i>Roles and Responsibilities</a></li>
@@ -190,7 +189,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RDM Handbook</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RDM Handbook DRAFT</a>
           </h1>
         </div>
 
@@ -198,11 +197,11 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="whats-in-a-name" class="section level2 unnumbered">
-<h2>What's in a name</h2>
+<div id="whats-in-a-name" class="section level2 unnumbered hasAnchor">
+<h2>What's in a name<a href="whats-in-a-name.html#whats-in-a-name" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>File names need to achieve two primary goals, they need to make sense to a human reading them and they need to be constructed in a way that allows a computer to parse or process them. That is, file names should be <strong>human interpretable</strong> and <strong>machine readable</strong>.</p>
-<div id="human-interpretable" class="section level3 unnumbered">
-<h3>Human interpretable</h3>
+<div id="human-interpretable" class="section level3 unnumbered hasAnchor">
+<h3>Human interpretable<a href="whats-in-a-name.html#human-interpretable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To be human interpretable, a file name needs to be meaningful. To do this, it needs to convey some basic information to a person reading it. We do this by integrating metadata into the file name. The metadata elements we include are:</p>
 <ul>
 <li>Who created the file</li>
@@ -218,15 +217,15 @@
 </div>
 <p>All said, that’s a fair bit of information to hold in a file name. However, using standard truncation can be useful to manage overly long file names.</p>
 </div>
-<div id="machine-readable" class="section level3 unnumbered">
-<h3>Machine readable</h3>
+<div id="machine-readable" class="section level3 unnumbered hasAnchor">
+<h3>Machine readable<a href="whats-in-a-name.html#machine-readable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A file name that is machine readable or machine interpretable means creating file names in such a way that they can be sorted by an application along specified delimiters. This means building our names according to set patterns, which can then be parsed, and if necessary, described. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.</p>
 <div class="note">
 <p>By using underscores <code>_</code> to break up the metadata in a file name and by always using the same patterns, we can computationaly isolate files based on each of these attributes irrespective of the directory structure in which we store them, and, for example, find all files from a particular creator, project, or created on a specific date.</p>
 </div>
 </div>
-<div id="special-characters" class="section level3 unnumbered">
-<h3>Special characters</h3>
+<div id="special-characters" class="section level3 unnumbered hasAnchor">
+<h3>Special characters<a href="whats-in-a-name.html#special-characters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Different computing environments (applications, operating systems etc) handle character encoding in idiosyncratic ways. If you’ve ever opened a document and seen what look like odd characters or numbers in boxes in the middle of words, this is becuase the original encoding does not match the encoding of the system you’re using.</p>
 <p>This same thing can happen in file names and even produce errors when trying to read files. For this reason, we want to work with the safest subset of characters available to us; those base characters recognized by all systems. This means not using special characters.</p>
 <p>Special characters are all characters except:</p>
@@ -290,7 +289,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Graduate-Lab-RDM-Handbook.pdf", "Graduate-Lab-RDM-Handbook.epub"],
+"download": ["Graduate-Lab-RDM-Handbook DRAFT.pdf", "Graduate-Lab-RDM-Handbook DRAFT.epub"],
 "search": {
 "engine": "fuse",
 "options": null
